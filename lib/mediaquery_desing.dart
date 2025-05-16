@@ -63,12 +63,12 @@ class _mediaqueryDesingState extends State<mediaqueryDesing> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    int crossAxisCount = 2;
+    int crossAxisCount = 2; // Default for Mobile (Pixel size < 768)
 
-    if (screenWidth > 1100) {
-      crossAxisCount = 4;
-    } else if (screenWidth > 700) {
-      crossAxisCount = 3;
+    if (screenWidth > 1024) {
+      crossAxisCount = 4; // Desktop/web size (Pixel size > 1024)
+    } else if (screenWidth > 768) {
+      crossAxisCount = 3; // Tablet Size (1024 >= Pixel size > 768)
     }
 
     return Scaffold(
